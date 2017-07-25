@@ -9,8 +9,71 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>"><%= image_tag("AOFrenzy2.png") %> Frenzy Squirrelz</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "ACCUEIL", "/", class: "nav-link" %>
+          </li>
+          <li class="nav-item <%= 'active' if yield(:page_title) == 'Products' %>">
+            <%= link_to "MEMBRES", "/", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ÉVÉNEMENTS", "/", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "INFOS SUR LA GUILDE", "/", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "RÈGLES", "/", class: "nav-link" %>
+          </li>
+        </ul>
+        <ul class="nav" id="auth-button">
+          <% if user_signed_in? %>
+            <li class="dropdown">
+              <%= button_tag current_user.email[/[^@]+/], class: "btn btn-primary my-2 my-sm-0 dropdown-toggle", id: "dropdownMenuButton", 'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false" %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <%= link_to('Edit Profile', edit_user_registration_path, class: "dropdown-item") %>
+                <%= link_to('Logout', destroy_user_session_path, method: "delete", class: "dropdown-item") %>
+              </div>
+            </li>
+          <% else %>
+            <%= link_to('Login', new_user_session_path, class: "btn btn-primary my-2 my-sm-0", type: 'button') %>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <% unless flash.empty? %>
+      <script type="text/javascript">
+        <% flash.each do |f| %>
+        <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+          toastr['<%= type %>']('<%= f[1] %>');
+        <% end %>
+      </script>
+    <% end %>
+    <div class="container">
+      <% if notice %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <% if alert %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= alert %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
