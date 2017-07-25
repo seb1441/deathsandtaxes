@@ -37,12 +37,12 @@
             <li class="dropdown">
               <%= button_tag current_user.email[/[^@]+/], class: "btn btn-primary my-2 my-sm-0 dropdown-toggle", id: "dropdownMenuButton", 'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false" %>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <%= link_to('Edit Profile', edit_user_registration_path, class: "dropdown-item") %>
-                <%= link_to('Logout', destroy_user_session_path, method: "delete", class: "dropdown-item") %>
+                <%= link_to('Modifier Profile', edit_user_registration_path, class: "dropdown-item") %>
+                <%= link_to('Déconnecter', destroy_user_session_path, method: "delete", class: "dropdown-item") %>
               </div>
             </li>
           <% else %>
-            <%= link_to('Login', new_user_session_path, class: "btn btn-primary my-2 my-sm-0", type: 'button') %>
+            <%= link_to('Connecter', new_user_session_path, class: "btn btn-primary my-2 my-sm-0", type: 'button') %>
           <% end %>
         </ul>
       </div>
