@@ -84,6 +84,4 @@ test:
 #
 production:
   <<: *default
-  database: frenzysquirrelz_production
-  username: frenzysquirrelz
-  password: <%= ENV['FRENZYSQUIRRELZ_DATABASE_PASSWORD'] %>
+  database: DeviseMailer_prod
