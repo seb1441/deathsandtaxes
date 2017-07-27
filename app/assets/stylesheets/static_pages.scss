@@ -1,3 +1,54 @@
-// Place all the styles related to the static-pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dropdown-toggle, .dropdown-menu {
+  width: 300px;
+}
+.btn-group img { max-height: 70px;}
+.dropdown-toggle { }
+.dropdown-menu>li>a:hover { background: #f1f9fd } /* $search-blue */
+.dropdown-header { background: #ccc; font-size: 14px; font-weight: 700}
+
+.gear {
+  padding: 0;
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
+  cursor: default;
+  font-size: 14px;
+}
+
+.btn-group button {
+  padding-left: 0px;
+}
+
+.test {
+  float:left;
+}
+
+.item:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+.btn-group {
+  font-size: 5px;
+}
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.form-signin {
+  width: 500px;
+}
+
+#selected {
+  font-size: 14px;
+  line-height: 70px;
+}

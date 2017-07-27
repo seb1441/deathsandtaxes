@@ -16,3 +16,18 @@
 //= require jquery
 //= require tether
 //= require bootstrap-sprockets
+
+ //
+ // $( document ).on('turbolinks:load', function() {
+ //   $('.dropdown-menu a').click(function(){
+ //      $('#selected').text($(this).text());
+ //      alert("TEST");
+ //    });
+ // })
+
+ $( document ).on('turbolinks:load', function() {
+   $('.item').click(function(){
+      $('#selected').text($(this).text());
+      $('#inputCharacterName').val($.trim($(this).text()));
+    });
+ })
