@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    if User.where(id: :id).empty?
+    if User.where(id: params[:id]).empty?
       redirect_to root_path
       return
     end
