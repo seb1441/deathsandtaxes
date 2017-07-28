@@ -1,0 +1,25 @@
+<%= content_for :page_title, "Membres" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nom du personnage</th>
+      <th>Rang</th>
+      <th>Connecté la dernière fois</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr><% uid = user.id %>
+        <td><a href="/users/<%= user.id %>"><%= user.character_name %></a></td>
+        <td><%= user.rank %></td>
+        <% if user.last_sign_in_at.present? %>
+          <td>
+            <%= datetime = DateTime.strptime(user.last_sign_in_at.to_s[0..-6] + "UTC", "%Y-%m-%d %H:%M:%S %Z").strftime('%Y/%m/%d') %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

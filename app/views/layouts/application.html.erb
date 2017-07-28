@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Frenzysquirrelz</title>
+    <title><%= yield(:page_title) %> - Frenzy Squirrelz</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -16,28 +16,28 @@
       <a class="navbar-brand" href="<%= root_path %>"><%= image_tag("AOFrenzy2.png") %> Frenzy Squirrelz</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item <%= 'active' if yield(:page_title) == 'Accueil' %>">
             <%= link_to "ACCUEIL", "/", class: "nav-link" %>
           </li>
-          <li class="nav-item <%= 'active' if yield(:page_title) == 'Products' %>">
-            <%= link_to "MEMBRES", "/", class: "nav-link" %>
+          <li class="nav-item <%= 'active' if yield(:page_title) == 'Membres' %>">
+            <%= link_to "MEMBRES", members_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= 'active' if yield(:page_title) == 'Événements' %>">
             <%= link_to "ÉVÉNEMENTS", "/", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= 'active' if yield(:page_title) == 'Infos sur la guilde' %>">
             <%= link_to "INFOS SUR LA GUILDE", "/", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= 'active' if yield(:page_title) == 'Règles' %>">
             <%= link_to "RÈGLES", "/", class: "nav-link" %>
           </li>
         </ul>
         <ul class="nav" id="auth-button">
           <% if user_signed_in? %>
             <li class="dropdown">
-              <%= button_tag current_user.email[/[^@]+/], class: "btn btn-primary my-2 my-sm-0 dropdown-toggle", id: "dropdownMenuButton", 'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false" %>
+              <%= button_tag current_user.character_name, class: "btn btn-primary my-2 my-sm-0 dropdown-toggle", id: "dropdownMenuButton", 'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false" %>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <%= link_to('Modifier Profile', edit_user_registration_path, class: "dropdown-item") %>
+                <%= link_to('Modifier Profil', edit_user_registration_path, class: "dropdown-item") %>
                 <%= link_to('Déconnecter', destroy_user_session_path, method: "delete", class: "dropdown-item") %>
               </div>
             </li>

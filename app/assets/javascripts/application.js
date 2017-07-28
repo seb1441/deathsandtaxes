@@ -28,6 +28,6 @@
  $( document ).on('turbolinks:load', function() {
    $('.item').click(function(){
       $('#selected').text($(this).text());
-      $('#inputCharacterName').val($.trim($(this).text()));
+      $('#headGear').val($.trim($(this).text()));
     });
  })
