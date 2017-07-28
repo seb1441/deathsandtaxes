@@ -14,11 +14,13 @@
       <tr><% uid = user.id %>
         <td><a href="/users/<%= user.id %>"><%= user.character_name %></a></td>
         <td><%= user.rank %></td>
-        <% if user.last_sign_in_at.present? %>
-          <td>
-            <%= datetime = DateTime.strptime(user.last_sign_in_at.to_s[0..-6] + "UTC", "%Y-%m-%d %H:%M:%S %Z").strftime('%Y/%m/%d') %>
-          </td>
-        <% end %>
+        <td>
+          <% if user.last_sign_in_at.present? %>
+            <%= DateTime.strptime(user.last_sign_in_at.to_s[0..-6] + "UTC", "%Y-%m-%d %H:%M:%S %Z").strftime('%Y/%m/%d') %>
+          <% else %>
+            Jamais
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
