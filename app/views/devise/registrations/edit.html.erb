@@ -4,11 +4,23 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put}) do |f| %>
     <%= devise_error_messages! %>
 
-    <h2 class="form-signin-heading">Modification du profil</h2>
-    <div class="btn-group noselect">
+    <h2 class="form-signin-heading text-center">Modification du profil</h2>
+
+    <%= f.hidden_field :head, id: "headGear", placeholder: "", required: "" %>
+    <%= f.hidden_field :armor, id: "armorGear", placeholder: "", required: "" %>
+    <%= f.hidden_field :shoes, id: "shoesGear", placeholder: "", required: "" %>
+    <%= f.hidden_field :mainhand, id: "mainhandGear", placeholder: "", required: "" %>
+    <%= f.hidden_field :offhand, id: "offhandGear", placeholder: "", required: "" %>
+    <br>
+    <p class="text-center">Entrer le mot de passe actuel pour modifier</p>
+    <%= f.label :current_password, "Entrer le mot de passe actuel pour modifier", for: "inputCurrentPassword", class: "sr-only" %>
+    <%= f.password_field :current_password, autocomplete: "off", id: "inputCurrentPassword", class: "form-control", placeholder: "Mot de passe actuel", data: { order: "last" } %>
+    <br>
+
+    <div id="headslot"class="btn-group noselect">
       <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= image_tag("heads/beginners_mercenary_hood.png", class: "test") %>
-        <span id="selected">Beginner's Mercenary Hood</span>
+        <%= image_tag("heads/" + current_user.head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
+        <span id="selected"><%= current_user.head %></span>
       </button>
       <ul class="dropdown-menu gear">
         <li class="dropdown-header">T1</li>
@@ -35,11 +47,133 @@
         <% end %>
       </ul>
     </div>
-
-    <%= f.hidden_field :head, id: "headGear", placeholder: "", required: "", autofocus: "" %>
-
+    <br><br>
+    <div id="armorslot" class="btn-group noselect">
+      <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= image_tag("heads/" + current_user.armor.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
+        <span id="selected"><%= current_user.armor %></span>
+      </button>
+      <ul class="dropdown-menu gear">
+        <li class="dropdown-header">T1</li>
+        <% @heads.each do |head| %>
+          <% if head == "T2" %>
+            <li class="dropdown-header">T2</li>
+          <% elsif head == "T3" %>
+            <li class="dropdown-header">T3</li>
+          <% elsif head == "T4" %>
+            <li class="dropdown-header">T4</li>
+          <% elsif head == "T5" %>
+            <li class="dropdown-header">T5</li>
+          <% elsif head == "T6" %>
+            <li class="dropdown-header">T6</li>
+          <% elsif head == "T7" %>
+            <li class="dropdown-header">T7</li>
+          <% elsif head == "T8" %>
+            <li class="dropdown-header">T8</li>
+          <% else %>
+            <li class="item" title="Select this equipment">
+              <%= image_tag("heads/" + head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= head %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <br><br>
+    <div id="shoesslot" class="btn-group noselect">
+      <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= image_tag("heads/" + current_user.shoes.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
+        <span id="selected"><%= current_user.shoes %></span>
+      </button>
+      <ul class="dropdown-menu gear">
+        <li class="dropdown-header">T1</li>
+        <% @heads.each do |head| %>
+          <% if head == "T2" %>
+            <li class="dropdown-header">T2</li>
+          <% elsif head == "T3" %>
+            <li class="dropdown-header">T3</li>
+          <% elsif head == "T4" %>
+            <li class="dropdown-header">T4</li>
+          <% elsif head == "T5" %>
+            <li class="dropdown-header">T5</li>
+          <% elsif head == "T6" %>
+            <li class="dropdown-header">T6</li>
+          <% elsif head == "T7" %>
+            <li class="dropdown-header">T7</li>
+          <% elsif head == "T8" %>
+            <li class="dropdown-header">T8</li>
+          <% else %>
+            <li class="item" title="Select this equipment">
+              <%= image_tag("heads/" + head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= head %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <br><br>
+    <div id="mainhandslot" class="btn-group noselect">
+      <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= image_tag("heads/" + current_user.mainhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
+        <span id="selected"><%= current_user.mainhand %></span>
+      </button>
+      <ul class="dropdown-menu gear">
+        <li class="dropdown-header">T1</li>
+        <% @heads.each do |head| %>
+          <% if head == "T2" %>
+            <li class="dropdown-header">T2</li>
+          <% elsif head == "T3" %>
+            <li class="dropdown-header">T3</li>
+          <% elsif head == "T4" %>
+            <li class="dropdown-header">T4</li>
+          <% elsif head == "T5" %>
+            <li class="dropdown-header">T5</li>
+          <% elsif head == "T6" %>
+            <li class="dropdown-header">T6</li>
+          <% elsif head == "T7" %>
+            <li class="dropdown-header">T7</li>
+          <% elsif head == "T8" %>
+            <li class="dropdown-header">T8</li>
+          <% else %>
+            <li class="item" title="Select this equipment">
+              <%= image_tag("heads/" + head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= head %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <br><br>
+    <div id="offhandslot" class="btn-group noselect">
+      <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= image_tag("heads/" + current_user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
+        <span id="selected"><%= current_user.offhand %></span>
+      </button>
+      <ul class="dropdown-menu gear">
+        <li class="dropdown-header">T1</li>
+        <% @heads.each do |head| %>
+          <% if head == "T2" %>
+            <li class="dropdown-header">T2</li>
+          <% elsif head == "T3" %>
+            <li class="dropdown-header">T3</li>
+          <% elsif head == "T4" %>
+            <li class="dropdown-header">T4</li>
+          <% elsif head == "T5" %>
+            <li class="dropdown-header">T5</li>
+          <% elsif head == "T6" %>
+            <li class="dropdown-header">T6</li>
+          <% elsif head == "T7" %>
+            <li class="dropdown-header">T7</li>
+          <% elsif head == "T8" %>
+            <li class="dropdown-header">T8</li>
+          <% else %>
+            <li class="item" title="Select this equipment">
+              <%= image_tag("heads/" + head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= head %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <br><br>
     <%= f.label :email, "Adresse Email", for: "inputEmail", class: "sr-only"%>
-    <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Adresse email", required: "", autofocus: "", data: { order: "first" } %>
+    <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Adresse email", required: "", data: { order: "first" } %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -53,14 +187,8 @@
 
     <%= f.label :password_confirmation, "Mot de passe", for: "inputPasswordConfirmation", class: "sr-only" %>
     <%= f.password_field :password_confirmation, autocomplete: "off", id: "inputPasswordConfirmation", class: "form-control", placeholder: "Confirmation de mot de passe", data: { order: "first" } %>
-
-    <%= f.label :current_password, "Current password", for: "inputCurrentPassword", class: "sr-only" %>
-    <%= f.password_field :current_password, autocomplete: "off", id: "inputCurrentPassword", class: "form-control", placeholder: "Mot de passe actuel", data: { order: "last" } %>
-
-    <%= f.submit "Update", class: "btn btn-lg btn-primary btn-block" %>
     <br>
-
+    <br>
+    <%= f.submit "Update", class: "btn btn-lg btn-primary btn-block" %>
   <% end %>
-
-  <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-block" %>
 </div>

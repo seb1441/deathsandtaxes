@@ -1,4 +1,12 @@
+body {
+  background-image: url('wallpaper_albion.jpg')
+}
 
+.container {
+  background-color: #edf0f5;
+  border-radius: 25px;
+  border: 2px solid black;
+}
 .dropdown-toggle, .dropdown-menu {
   width: 300px;
 }

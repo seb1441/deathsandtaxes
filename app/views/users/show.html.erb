@@ -1,1 +1,30 @@
 <%= @user.character_name %>
+<div class="row">
+  <div class="col">
+  </div>
+  <div class="col">
+    <%= image_tag("heads/" + @user.head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.head, class: "test") %>
+  </div>
+  <div class="col">
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <%= image_tag("heads/" + @user.mainhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.mainhand, class: "test") %>
+  </div>
+  <div class="col">
+    <%= image_tag("heads/" + @user.armor.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.armor, class: "test") %>
+  </div>
+  <div class="col">
+    <%= image_tag("heads/" + @user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.offhand, class: "test") %>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+  </div>
+  <div class="col">
+    <%= image_tag("heads/" + @user.shoes.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.shoes, class: "test") %>
+  </div>
+  <div class="col">
+  </div>
+</div>
