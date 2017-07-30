@@ -10,7 +10,40 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:character_name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:character_name, :head, :armor, :shoes, :mainhand, :offhand])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:character_name,
+      :head,
+      :armor,
+      :shoes,
+      :mainhand,
+      :offhand,
+      :potion,
+      :food,
+      :crop,
+      :herb,
+      :animal,
+      :wood,
+      :fiber,
+      :stone,
+      :leather,
+      :ore,
+      :woodaxe,
+      :stonehammer,
+      :scythe,
+      :skinningknife,
+      :pickaxe,
+      :clothhead,
+      :clotharmor,
+      :clothshoes,
+      :leatherhead,
+      :leatherarmor,
+      :leathershoes,
+      :platehead,
+      :platearmor,
+      :plateshoes,
+      :weaponmagic,
+      :weaponranged,
+      :weaponmelee,
+      :weaponoffhand ])
   end
 
   before_action :set_items
