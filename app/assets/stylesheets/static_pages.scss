@@ -69,6 +69,8 @@ body {
 }
 
 #skillsdropdown .dropdown-menu {
-  width: 70px;
+  width: 190px;
   background-color: lightgray;
+  max-height: 300px;
+  overflow-x: hidden;
 }

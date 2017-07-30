@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729181042) do
+ActiveRecord::Schema.define(version: 20170730050216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,34 @@ ActiveRecord::Schema.define(version: 20170729181042) do
     t.string "mainhand", default: "Beginner's Mercenary Hood"
     t.string "offhand", default: "Beginner's Mercenary Hood"
     t.boolean "admin", default: false
+    t.integer "potion", default: 1
+    t.integer "food", default: 1
+    t.integer "crop", default: 1
+    t.integer "herb", default: 1
+    t.integer "animal", default: 1
+    t.integer "wood", default: 1
+    t.integer "fiber", default: 1
+    t.integer "stone", default: 1
+    t.integer "leather", default: 1
+    t.integer "ore", default: 1
+    t.integer "woodaxe", default: 1
+    t.integer "stonehammer", default: 1
+    t.integer "scythe", default: 1
+    t.integer "skinningknife", default: 1
+    t.integer "pickaxe", default: 1
+    t.integer "clothhead", default: 1
+    t.integer "clotharmor", default: 1
+    t.integer "clothshoes", default: 1
+    t.integer "leatherhead", default: 1
+    t.integer "leatherarmor", default: 1
+    t.integer "leathershoes", default: 1
+    t.integer "platehead", default: 1
+    t.integer "platearmor", default: 1
+    t.integer "plateshoes", default: 1
+    t.integer "weaponranged", default: 1
+    t.integer "weaponmagic", default: 1
+    t.integer "weaponmelee", default: 1
+    t.integer "weaponoffhand", default: 1
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

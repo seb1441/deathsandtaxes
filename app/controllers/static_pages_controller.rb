@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   end
 
   def members
-    @users = User.all
+    @users = User.all.order('character_name ASC')
     Time.zone = "Eastern Time (US & Canada)"
   end
 end
