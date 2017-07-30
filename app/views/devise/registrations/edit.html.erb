@@ -264,21 +264,20 @@
       </div>
     </div>
     <br><br><br><br>
+    <strong>Pour modifier votre nom de personnage(s):</strong>
+    <%= f.text_field :character_name, class: "form-control", placeholder: "Personnage 1, Personnage 2, ...", required: true%>
+    <br>
     <strong>Pour modifier votre email:</strong>
-    <%= f.label :email, "Adresse Email", for: "inputEmail", class: "sr-only"%>
-    <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Adresse email", required: "", data: { order: "first" } %>
+    <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Adresse email", required: "" %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %><br><br>
+    <% end %><br>
     <strong>Pour modifier votre mot de passe:</strong>
-    <%= f.label :password, "Mot de passe", for: "inputPassword", class: "sr-only" %>
-    <%= f.password_field :password, autocomplete: "off", id: "inputPassword", class: "form-control", placeholder: "Mot de passe", data: { order: "first" } %>
+    <%= f.password_field :password, autocomplete: "off", id: "inputPassword", class: "form-control", placeholder: "Mot de passe" %>
     <%# if @minimum_password_length %>
       <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
     <%# end %>
-
-    <%= f.label :password_confirmation, "Mot de passe", for: "inputPasswordConfirmation", class: "sr-only" %>
     <%= f.password_field :password_confirmation, autocomplete: "off", id: "inputPasswordConfirmation", class: "form-control", placeholder: "Confirmation de mot de passe", data: { order: "first" } %>
     <br>
     <br>
