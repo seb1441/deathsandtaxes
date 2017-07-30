@@ -22,6 +22,14 @@
           <li class="nav-item <%= 'active' if yield(:page_title) == 'Membres' %>">
             <%= link_to "MEMBRES", members_path, class: "nav-link" %>
           </li>
+          <li id="skillsdropdown" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SKILLS</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Gatherer</a>
+              <a class="dropdown-item" href="#">Crafter</a>
+              <a class="dropdown-item" href="#">Farmer</a>
+            </div>
+          </li>
           <li class="nav-item <%= 'active' if yield(:page_title) == 'Événements' %>">
             <%= link_to "ÉVÉNEMENTS", "/", class: "nav-link" %>
           </li>

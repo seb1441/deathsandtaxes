@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729043649) do
+ActiveRecord::Schema.define(version: 20170729181042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 20170729043649) do
     t.datetime "updated_at", null: false
     t.string "character_name"
     t.string "rank", default: "Recruit"
-    t.string "head"
-    t.string "armor", default: "0"
-    t.string "shoes", default: "0"
-    t.string "mainhand", default: "0"
-    t.string "offhand", default: "0"
+    t.string "head", default: "Beginner's Mercenary Hood"
+    t.string "armor", default: "Beginner's Mercenary Hood"
+    t.string "shoes", default: "Beginner's Mercenary Hood"
+    t.string "mainhand", default: "Beginner's Mercenary Hood"
+    t.string "offhand", default: "Beginner's Mercenary Hood"
     t.boolean "admin", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

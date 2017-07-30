@@ -1,10 +1,13 @@
 body {
   background-image: url(image-path('wallpaper_albion.jpg'));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .container {
   background-color: #edf0f5;
-  border-radius: 25px;
+  border-radius: 20px;
   border: 2px solid black;
 }
 .dropdown-toggle, .dropdown-menu {
@@ -59,4 +62,13 @@ body {
 #selected {
   font-size: 14px;
   line-height: 70px;
+}
+
+#skillsdropdown {
+  width: 78px;
+}
+    // width: 362px;
+#skillsdropdown .dropdown-menu {
+  width: 70px;
+  background-color: lightgray;
 }
