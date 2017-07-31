@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
     Time.zone = "Eastern Time (US & Canada)"
   end
 
-  def potion
-    @users = User.all.order('potion DESC')
+  def farming
+    @users = User.all.order('character_name DESC')
   end
 end
