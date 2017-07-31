@@ -64,7 +64,7 @@ class StaticPagesController < ApplicationController
       elsif search_term == "SortStonehammer"
         @users = User.all.order('stonehammer DESC')
       elsif search_term == "SortSickle"
-        @users = User.all.order('scythe DESC')
+        @users = User.all.order('sickle DESC')
       elsif search_term == "SortSkinningKnife"
         @users = User.all.order('skinningknife DESC')
       elsif search_term == "SortPickaxe"
