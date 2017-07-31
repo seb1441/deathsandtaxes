@@ -12,7 +12,7 @@
     <%= f.hidden_field :mainhand, id: "mainhandGear", placeholder: "", required: "" %>
     <%= f.hidden_field :offhand, id: "offhandGear", placeholder: "", required: "" %>
     <br>
-    <h6 class="text-center" style="color: red;">Entrer le mot de passe actuel pour modifier le profil</h6>
+    <h6 class="text-center" style="color: red;">Entrer votre mot de passe actuel pour modifier votre profil</h6>
     <%= f.label :current_password, "Entrer le mot de passe actuel pour modifier", for: "inputCurrentPassword", class: "sr-only" %>
     <%= f.password_field :current_password, autocomplete: "off", id: "inputCurrentPassword", class: "form-control", placeholder: "Mot de passe actuel", data: { order: "last" } %>
     <br>
@@ -171,96 +171,105 @@
         <% end %>
       </ul>
     </div>
-    <br><br>
-    <div class="text-center"><strong>Farming Levels</strong></div><br>
+    <br><br><br>
+    <div class="text-center"><strong>Entrer le tier (1-8) de chacun de vos skills ci-dessous.</strong></div><br>
+    <div class="text-center"><strong>Farming Tiers</strong></div><br>
     <div class="row">
       <div class="col">
         <%= f.label :potion, "Potion" %>
-        <%= f.text_field :potion, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :potion, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
         <%= f.label :food, placeholder: "Food" %>
-        <%= f.text_field :food, class: "form-control", placeholder: "Tier", required: true %>
-        <%= f.label :crop, placeholder: "Crop" %>
-        <%= f.text_field :crop, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :food, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
       <div class="col">
+        <%= f.label :crop, placeholder: "Crop" %>
+        <%= f.number_field :crop, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
         <%= f.label :herb, "Herb" %>
-        <%= f.text_field :herb, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :herb, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      </div>
+      <div class="col">
         <%= f.label :animal, "Animal" %>
-        <%= f.text_field :animal, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :animal, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
     </div><br>
     <div class="text-center"><strong>Gathering Tiers</strong></div><br>
     <div class="row">
       <div class="col">
         <%= f.label :wood, "Wood" %>
-        <%= f.text_field :wood, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :wood, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
         <%= f.label :fiber, "Fiber" %>
-        <%= f.text_field :fiber, class: "form-control", placeholder: "Tier", required: true %>
-        <%= f.label :stone, "Stone" %>
-        <%= f.text_field :stone, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :fiber, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
       <div class="col">
+        <%= f.label :stone, "Stone" %>
+        <%= f.number_field :stone, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
         <%= f.label :leather, "Leather" %>
-        <%= f.text_field :leather, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :leather, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      </div>
+      <div class="col">
         <%= f.label :ore, "Ore" %>
-        <%= f.text_field :ore, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :ore, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
     </div><br>
     <div class="text-center"><strong>Tool Crafting Tiers</strong></div><br>
     <div class="row">
       <div class="col">
         <%= f.label :woodaxe, "Woodaxe" %>
-        <%= f.text_field :woodaxe, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :woodaxe, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
         <%= f.label :stonehammer, "Stonehammer" %>
-        <%= f.text_field :stonehammer, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :stonehammer, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      </div>
+      <div class="col">
         <%= f.label :scythe, "Sickle" %>
-        <%= f.text_field :scythe, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :scythe, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :skinningknife, "Skin Knife" %>
+        <%= f.number_field :skinningknife, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
       <div class="col">
-        <%= f.label :skinningknife, "Skinning Knife" %>
-        <%= f.text_field :skinningknife, class: "form-control", placeholder: "Tier", required: true %>
         <%= f.label :pickaxe, "Pickaxe" %>
-        <%= f.text_field :pickaxe, class: "form-control", placeholder: "Tier", required: true %>
-      </div>
-    </div><br>
-    <div class="text-center"><strong>Armor Crafting Tiers</strong></div><br>
-    <div class="row">
-      <div class="col">
-        <%= f.label :clothhead, "Cloth Head" %>
-        <%= f.text_field :clothhead, class: "form-control", placeholder: "Tier", required: true %>
-        <%= f.label :clothshoes, "Cloth Shoes" %>
-        <%= f.text_field :clothshoes, class: "form-control", placeholder: "Tier", required: true %>
-        <%= f.label :leatherarmor, "Leather Armor" %>
-        <%= f.text_field :leatherarmor, class: "form-control", placeholder: "Tier", required: true %>
-        <%= f.label :platehead, "Plate Head" %>
-        <%= f.text_field :platehead, class: "form-control", placeholder: "Tier", required: true %>
-        <%= f.label :plateshoes, "Plate Shoes" %>
-        <%= f.text_field :plateshoes, class: "form-control", placeholder: "Tier", required: true %>
-      </div>
-      <div class="col">
-        <%= f.label :clotharmor, "Cloth Armor" %>
-        <%= f.text_field :clotharmor, class: "form-control", placeholder: "Tier", required: true %>
-        <%= f.label :leatherhead, "Leather Head" %>
-        <%= f.text_field :leatherhead, class: "form-control", placeholder: "Tier", required: true %>
-        <%= f.label :leathershoes, "Leather Shoes" %>
-        <%= f.text_field :leathershoes, class: "form-control", placeholder: "Tier", required: true %>
-        <%= f.label :platearmor, "Plate Armor" %>
-        <%= f.text_field :platearmor, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :pickaxe, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
     </div><br>
     <div class="text-center"><strong>Weapon Crafting Tiers</strong></div><br>
     <div class="row">
       <div class="col">
         <%= f.label :weaponmagic, "Weapon Magic" %>
-        <%= f.text_field :weaponmagic, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :weaponmagic, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
         <%= f.label :weaponranged, "Weapon Ranged" %>
-        <%= f.text_field :weaponranged, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :weaponranged, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
       <div class="col">
         <%= f.label :weaponmelee, "Weapon Melee" %>
-        <%= f.text_field :weaponmelee, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :weaponmelee, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
         <%= f.label :weaponoffhand, "Weapon Offhand" %>
-        <%= f.text_field :weaponoffhand, class: "form-control", placeholder: "Tier", required: true %>
+        <%= f.number_field :weaponoffhand, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      </div>
+    </div><br>
+    <div class="text-center"><strong>Armor Crafting Tiers</strong></div><br>
+    <div class="row">
+      <div class="col">
+        <%= f.label :clothhead, "Cloth<br>Head".html_safe %>
+        <%= f.number_field :clothhead, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :clotharmor, "Cloth Armor" %>
+        <%= f.number_field :clotharmor, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :clothshoes, "Cloth Shoes" %>
+        <%= f.number_field :clothshoes, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      </div>
+      <div class="col">
+        <%= f.label :leatherhead, "Leather Head" %>
+        <%= f.number_field :leatherhead, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :leatherarmor, "Leather Armor" %>
+        <%= f.number_field :leatherarmor, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :leathershoes, "Leather Shoes" %>
+        <%= f.number_field :leathershoes, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      </div>
+      <div class="col">
+        <%= f.label :platehead, "Plate<br>Head".html_safe %>
+        <%= f.number_field :platehead, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :platearmor, "Plate Armor" %>
+        <%= f.number_field :platearmor, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :plateshoes, "Plate Shoes" %>
+        <%= f.number_field :plateshoes, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
     </div>
     <br><br><br><br>
