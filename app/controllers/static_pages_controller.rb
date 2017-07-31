@@ -9,7 +9,6 @@ class StaticPagesController < ApplicationController
   end
 
   def farming
-    @users = User.all.order('character_name DESC')
     if params[:q]
       search_term = params[:q]
       if search_term == "SortPotion"
@@ -24,7 +23,27 @@ class StaticPagesController < ApplicationController
           @users = User.all.order('animal DESC')
       end
     else
-      @users = User.all.order('character_name DESC')
+      @users = User.all.order('character_name ASC')
     end
   end
+
+  def gathering
+    if params[:q]
+      search_term = params[:q]
+      if search_term == "SortWood"
+        @users = User.all.order('wood DESC')
+      elsif search_term == "SortFiber"
+        @users = User.all.order('fiber DESC')
+      elsif search_term == "SortStone"
+        @users = User.all.order('stone DESC')
+      elsif search_term == "SortLeather"
+        @users = User.all.order('leather DESC')
+      elsif search_term == "SortOre"
+          @users = User.all.order('ore DESC')
+      end
+    else
+      @users = User.all.order('character_name ASC')
+    end
+  end
+
 end

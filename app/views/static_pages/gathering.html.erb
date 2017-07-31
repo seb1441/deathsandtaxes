@@ -1,25 +1,25 @@
-<%= content_for :page_title, "Farming" %>
+<%= content_for :page_title, "Gathering" %>
 <table class="table">
   <thead>
     <tr>
-      <th>Nom du personnage</th>
-      <th><a href="#">Potion Level</a></th>
-      <th>Food Level</th>
-      <th>Crop Level</th>
-      <th>Herb Level</th>
-      <th>Animal Level</th>
+      <th><%= link_to 'Nom du personnage', "/skills/gathering" %></th>
+      <th><%= link_to 'Wood Tier', "/skills/gathering?utf8=✓&q=SortWood&commit=Search" %></th>
+      <th><%= link_to 'Fiber Tier', "/skills/gathering?utf8=✓&q=SortFiber&commit=Search" %></th>
+      <th><%= link_to 'Stone Tier', "/skills/gathering?utf8=✓&q=SortStone&commit=Search" %></th>
+      <th><%= link_to 'Leather Tier', "/skills/gathering?utf8=✓&q=SortLeather&commit=Search" %></th>
+      <th><%= link_to 'Ore Tier', "/skills/gathering?utf8=✓&q=SortOre&commit=Search" %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
-      <tr><% uid = user.id %>
+      <tr>
         <td><a href="/users/<%= user.id %>"><%= user.character_name %></a>  </td>
-        <td><%= user.potion %></td>
-        <td><%= user.food %></td>
-        <td><%= user.crop %></td>
-        <td><%= user.herb %></td>
-        <td><%= user.animal %></td>
+        <td><%= user.wood %></td>
+        <td><%= user.fiber %></td>
+        <td><%= user.stone %></td>
+        <td><%= user.leather %></td>
+        <td><%= user.ore %></td>
       </tr>
     <% end %>
   </tbody>
