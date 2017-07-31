@@ -50,29 +50,29 @@
     <br><br>
     <div id="armorslot" class="btn-group noselect">
       <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= image_tag("heads/" + current_user.armor.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
+        <%= image_tag("armors/" + current_user.armor.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
         <span id="selected"><%= current_user.armor %></span>
       </button>
       <ul class="dropdown-menu gear">
         <li class="dropdown-header">T1</li>
-        <% @heads.each do |head| %>
-          <% if head == "T2" %>
+        <% @armors.each do |armor| %>
+          <% if armor == "T2" %>
             <li class="dropdown-header">T2</li>
-          <% elsif head == "T3" %>
+          <% elsif armor == "T3" %>
             <li class="dropdown-header">T3</li>
-          <% elsif head == "T4" %>
+          <% elsif armor == "T4" %>
             <li class="dropdown-header">T4</li>
-          <% elsif head == "T5" %>
+          <% elsif armor == "T5" %>
             <li class="dropdown-header">T5</li>
-          <% elsif head == "T6" %>
+          <% elsif armor == "T6" %>
             <li class="dropdown-header">T6</li>
-          <% elsif head == "T7" %>
+          <% elsif armor == "T7" %>
             <li class="dropdown-header">T7</li>
-          <% elsif head == "T8" %>
+          <% elsif armor == "T8" %>
             <li class="dropdown-header">T8</li>
           <% else %>
             <li class="item" title="Select this equipment">
-              <%= image_tag("heads/" + head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= head %>
+              <%= image_tag("armors/" + armor.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= armor %>
             </li>
           <% end %>
         <% end %>
@@ -81,29 +81,29 @@
     <br><br>
     <div id="shoesslot" class="btn-group noselect">
       <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= image_tag("heads/" + current_user.shoes.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
+        <%= image_tag("shoes/" + current_user.shoes.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
         <span id="selected"><%= current_user.shoes %></span>
       </button>
       <ul class="dropdown-menu gear">
         <li class="dropdown-header">T1</li>
-        <% @heads.each do |head| %>
-          <% if head == "T2" %>
+        <% @shoes.each do |shoes| %>
+          <% if shoes == "T2" %>
             <li class="dropdown-header">T2</li>
-          <% elsif head == "T3" %>
+          <% elsif shoes == "T3" %>
             <li class="dropdown-header">T3</li>
-          <% elsif head == "T4" %>
+          <% elsif shoes == "T4" %>
             <li class="dropdown-header">T4</li>
-          <% elsif head == "T5" %>
+          <% elsif shoes == "T5" %>
             <li class="dropdown-header">T5</li>
-          <% elsif head == "T6" %>
+          <% elsif shoes == "T6" %>
             <li class="dropdown-header">T6</li>
-          <% elsif head == "T7" %>
+          <% elsif shoes == "T7" %>
             <li class="dropdown-header">T7</li>
-          <% elsif head == "T8" %>
+          <% elsif shoes == "T8" %>
             <li class="dropdown-header">T8</li>
           <% else %>
             <li class="item" title="Select this equipment">
-              <%= image_tag("heads/" + head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= head %>
+              <%= image_tag("shoes/" + shoes.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= shoes %>
             </li>
           <% end %>
         <% end %>
@@ -112,29 +112,29 @@
     <br><br>
     <div id="mainhandslot" class="btn-group noselect">
       <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= image_tag("heads/" + current_user.mainhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
+        <%= image_tag("weapons/" + current_user.mainhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
         <span id="selected"><%= current_user.mainhand %></span>
       </button>
       <ul class="dropdown-menu gear">
         <li class="dropdown-header">T1</li>
-        <% @heads.each do |head| %>
-          <% if head == "T2" %>
+        <% @weapons.each do |weapon| %>
+          <% if weapon == "T2" %>
             <li class="dropdown-header">T2</li>
-          <% elsif head == "T3" %>
+          <% elsif weapon == "T3" %>
             <li class="dropdown-header">T3</li>
-          <% elsif head == "T4" %>
+          <% elsif weapon == "T4" %>
             <li class="dropdown-header">T4</li>
-          <% elsif head == "T5" %>
+          <% elsif weapon == "T5" %>
             <li class="dropdown-header">T5</li>
-          <% elsif head == "T6" %>
+          <% elsif weapon == "T6" %>
             <li class="dropdown-header">T6</li>
-          <% elsif head == "T7" %>
+          <% elsif weapon == "T7" %>
             <li class="dropdown-header">T7</li>
-          <% elsif head == "T8" %>
+          <% elsif weapon == "T8" %>
             <li class="dropdown-header">T8</li>
           <% else %>
             <li class="item" title="Select this equipment">
-              <%= image_tag("heads/" + head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= head %>
+              <%= image_tag("weapons/" + weapon.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= weapon %>
             </li>
           <% end %>
         <% end %>
@@ -143,29 +143,29 @@
     <br><br>
     <div id="offhandslot" class="btn-group noselect">
       <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= image_tag("heads/" + current_user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
+        <%= image_tag("offhands/" + current_user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
         <span id="selected"><%= current_user.offhand %></span>
       </button>
       <ul class="dropdown-menu gear">
         <li class="dropdown-header">T1</li>
-        <% @heads.each do |head| %>
-          <% if head == "T2" %>
+        <% @offhands.each do |offhand| %>
+          <% if offhand == "T2" %>
             <li class="dropdown-header">T2</li>
-          <% elsif head == "T3" %>
+          <% elsif offhand == "T3" %>
             <li class="dropdown-header">T3</li>
-          <% elsif head == "T4" %>
+          <% elsif offhand == "T4" %>
             <li class="dropdown-header">T4</li>
-          <% elsif head == "T5" %>
+          <% elsif offhand == "T5" %>
             <li class="dropdown-header">T5</li>
-          <% elsif head == "T6" %>
+          <% elsif offhand == "T6" %>
             <li class="dropdown-header">T6</li>
-          <% elsif head == "T7" %>
+          <% elsif offhand == "T7" %>
             <li class="dropdown-header">T7</li>
-          <% elsif head == "T8" %>
+          <% elsif offhand == "T8" %>
             <li class="dropdown-header">T8</li>
           <% else %>
             <li class="item" title="Select this equipment">
-              <%= image_tag("heads/" + head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= head %>
+              <%= image_tag("offhands/" + offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png") %><%= offhand %>
             </li>
           <% end %>
         <% end %>
