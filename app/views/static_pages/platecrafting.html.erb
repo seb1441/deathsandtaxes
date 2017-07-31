@@ -1,0 +1,22 @@
+<%= content_for :page_title, "Plate Crafting" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= link_to 'Nom du personnage', "/skills/plate-crafting" %></th>
+      <th><%= link_to 'Plate Head Tier', "/skills/plate-crafting?utf8=✓&q=SortPlateHead&commit=Search" %></th>
+      <th><%= link_to 'Plate Armor Tier', "/skills/plate-crafting?utf8=✓&q=SortPlateArmor&commit=Search" %></th>
+      <th><%= link_to 'Plate Shoes Tier', "/skills/plate-crafting?utf8=✓&q=SortPlateShoes&commit=Search" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><a href="/membres/<%= user.id %>-<%= user.character_name %>"><%= user.character_name %></a>  </td>
+        <td><%= user.platehead %></td>
+        <td><%= user.platearmor %></td>
+        <td><%= user.plateshoes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

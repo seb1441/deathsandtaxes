@@ -1,0 +1,26 @@
+<%= content_for :page_title, "Tool Crafting" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= link_to 'Nom du personnage', "/skills/tool-crafting" %></th>
+      <th><%= link_to 'Woodaxe Tier', "/skills/tool-crafting?utf8=✓&q=SortWoodaxe&commit=Search" %></th>
+      <th><%= link_to 'Stonehammer Tier', "/skills/tool-crafting?utf8=✓&q=SortStonehammer&commit=Search" %></th>
+      <th><%= link_to 'Sickle Tier', "/skills/tool-crafting?utf8=✓&q=SortSickle&commit=Search" %></th>
+      <th><%= link_to 'Skinning Knife Tier', "/skills/tool-crafting?utf8=✓&q=SortSkinningKnife&commit=Search" %></th>
+      <th><%= link_to 'Pickaxe Tier', "/skills/tool-crafting?utf8=✓&q=SortPickaxe&commit=Search" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><a href="/membres/<%= user.id %>-<%= user.character_name %>"><%= user.character_name %></a>  </td>
+        <td><%= user.woodaxe %></td>
+        <td><%= user.stonehammer %></td>
+        <td><%= user.scythe %></td>
+        <td><%= user.skinningknife %></td>
+        <td><%= user.pickaxe %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

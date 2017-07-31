@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get '/membres', to: 'static_pages#members', as: 'members'
   get '/skills/farming', to: 'static_pages#farming', as: 'farming'
   get '/skills/gathering', to: 'static_pages#gathering', as: 'gathering'
+  get '/skills/weapon-crafting', to: 'static_pages#weaponcrafting', as: 'weaponcrafting'
+  get '/skills/tool-crafting', to: 'static_pages#toolcrafting', as: 'toolcrafting'
+  get '/skills/cloth-crafting', to: 'static_pages#clothcrafting', as: 'clothcrafting'
+  get '/skills/leather-crafting', to: 'static_pages#leathercrafting', as: 'leathercrafting'
+  get '/skills/plate-crafting', to: 'static_pages#platecrafting', as: 'platecrafting'
   resources :users, path: "membres"
   get "*path" => redirect("/")
   # as :user do

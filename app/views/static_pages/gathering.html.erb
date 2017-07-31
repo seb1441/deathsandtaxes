@@ -14,7 +14,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><a href="/users/<%= user.id %>"><%= user.character_name %></a>  </td>
+        <td><a href="/membres/<%= user.id %>-<%= user.character_name %>"><%= user.character_name %></a>  </td>
         <td><%= user.wood %></td>
         <td><%= user.fiber %></td>
         <td><%= user.stone %></td>

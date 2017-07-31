@@ -1,0 +1,24 @@
+<%= content_for :page_title, "Weapon Crafting" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= link_to 'Nom du personnage', "/skills/weapon-crafting" %></th>
+      <th><%= link_to 'Magic Tier', "/skills/weapon-crafting?utf8=✓&q=SortMagic&commit=Search" %></th>
+      <th><%= link_to 'Ranged Tier', "/skills/weapon-crafting?utf8=✓&q=SortRanged&commit=Search" %></th>
+      <th><%= link_to 'Melee Tier', "/skills/weapon-crafting?utf8=✓&q=SortMelee&commit=Search" %></th>
+      <th><%= link_to 'Offhand Tier', "/skills/weapon-crafting?utf8=✓&q=SortOffhand&commit=Search" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><a href="/membres/<%= user.id %>-<%= user.character_name %>"><%= user.character_name %></a></td>
+        <td><%= user.weaponmagic %></td>
+        <td><%= user.weaponranged %></td>
+        <td><%= user.weaponmelee %></td>
+        <td><%= user.weaponoffhand %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

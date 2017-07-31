@@ -1,0 +1,22 @@
+<%= content_for :page_title, "Leather Crafting" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= link_to 'Nom du personnage', "/skills/leather-crafting" %></th>
+      <th><%= link_to 'Leather Head Tier', "/skills/leather-crafting?utf8=✓&q=SortLeatherHead&commit=Search" %></th>
+      <th><%= link_to 'Leather Armor Tier', "/skills/leather-crafting?utf8=✓&q=SortLeatherArmor&commit=Search" %></th>
+      <th><%= link_to 'Leather Shoes Tier', "/skills/leather-crafting?utf8=✓&q=SortLeatherShoes&commit=Search" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><a href="/membres/<%= user.id %>-<%= user.character_name %>"><%= user.character_name %></a>  </td>
+        <td><%= user.leatherhead %></td>
+        <td><%= user.leatherarmor %></td>
+        <td><%= user.leathershoes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
