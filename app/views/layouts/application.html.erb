@@ -37,12 +37,12 @@
           <li class="nav-item <%= 'active' if yield(:page_title) == 'Événements' %>">
             <%= link_to "ÉVÉNEMENTS", "/", class: "nav-link" %>
           </li>
-          <li class="nav-item <%= 'active' if yield(:page_title) == 'Infos sur la guilde' %>">
+          <!-- <li class="nav-item <%= 'active' if yield(:page_title) == 'Infos sur la guilde' %>">
             <%= link_to "INFOS SUR LA GUILDE", "/", class: "nav-link" %>
           </li>
           <li class="nav-item <%= 'active' if yield(:page_title) == 'Règles' %>">
             <%= link_to "RÈGLES", "/", class: "nav-link" %>
-          </li>
+          </li> -->
         </ul>
         <ul class="nav" id="auth-button">
           <% if user_signed_in? %>
