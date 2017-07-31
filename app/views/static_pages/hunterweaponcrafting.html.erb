@@ -1,0 +1,28 @@
+<%= content_for :page_title, "Hunter Weapon Crafting" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= link_to 'Nom du personnage', "/skills/hunter-weapon-crafting" %></th>
+      <th><%= link_to 'Bow Tier', "/skills/hunter-weapon-crafting?utf8=✓&q=SortBow&commit=Search" %></th>
+      <th><%= link_to 'Spear Tier', "/skills/hunter-weapon-crafting?utf8=✓&q=SortSpear&commit=Search" %></th>
+      <th><%= link_to 'Nature Staff Tier', "/skills/hunter-weapon-crafting?utf8=✓&q=SortNatureStaff&commit=Search" %></th>
+      <th><%= link_to 'Dagger Tier', "/skills/hunter-weapon-crafting?utf8=✓&q=SortDagger&commit=Search" %></th>
+      <th><%= link_to 'Quarterstaff Tier', "/skills/hunter-weapon-crafting?utf8=✓&q=SortQuarterstaff&commit=Search" %></th>
+      <th><%= link_to 'Torch Tier', "/skills/hunter-weapon-crafting?utf8=✓&q=SortTorch&commit=Search" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><a href="/membres/<%= user.id %>-<%= user.character_name %>"><%= user.character_name %></a>  </td>
+        <td><%= user.wepbow %></td>
+        <td><%= user.wepspear %></td>
+        <td><%= user.wepnaturestaff %></td>
+        <td><%= user.wepdagger %></td>
+        <td><%= user.wepquarterstaff %></td>
+        <td><%= user.weptorch %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -22,13 +22,15 @@
           <li class="nav-item <%= 'active' if yield(:page_title) == 'Membres' %>">
             <%= link_to "MEMBRES", members_path, class: "nav-link" %>
           </li>
-          <li id="skillsdropdown" class="nav-item dropdown <%= 'active' if yield(:page_title) == 'Farming' || yield(:page_title) == 'Gathering' || yield(:page_title) == 'Weapon Crafting' %>">
+          <li id="skillsdropdown" class="nav-item dropdown <%= 'active' if yield(:page_title) == 'Farming' || yield(:page_title) == 'Gathering' || yield(:page_title)["Crafting"] %>">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SKILLS</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <%= link_to "Farming", farming_path, class: "dropdown-item" %>
               <%= link_to "Gathering", gathering_path, class: "dropdown-item" %>
               <%= link_to "Tool Crafting", toolcrafting_path, class: "dropdown-item" %>
-              <%= link_to "Weapon Crafting", weaponcrafting_path, class: "dropdown-item" %>
+              <%= link_to "Mage Weapon Crafting", mageweaponcrafting_path, class: "dropdown-item" %>
+              <%= link_to "Hunter Weapon Crafting", hunterweaponcrafting_path, class: "dropdown-item" %>
+              <%= link_to "Warrior Weapon Crafting", warriorweaponcrafting_path, class: "dropdown-item" %>
               <%= link_to "Cloth Crafting", clothcrafting_path, class: "dropdown-item" %>
               <%= link_to "Leather Crafting", leathercrafting_path, class: "dropdown-item" %>
               <%= link_to "Plate Crafting", platecrafting_path, class: "dropdown-item" %>

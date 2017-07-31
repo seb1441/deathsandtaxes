@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
       :ore,
       :woodaxe,
       :stonehammer,
-      :scythe,
+      :sickle,
       :skinningknife,
       :pickaxe,
       :clothhead,
@@ -40,10 +40,25 @@ class ApplicationController < ActionController::Base
       :platehead,
       :platearmor,
       :plateshoes,
-      :weaponmagic,
-      :weaponranged,
-      :weaponmelee,
-      :weaponoffhand ])
+      :wepfire,
+      :wepholy,
+      :weparcane,
+      :wepfrost,
+      :wepcursed,
+      :weptome,
+      :wepbow,
+      :wepspear,
+      :wepnaturestaff,
+      :wepdagger,
+      :wepquarterstaff,
+      :weptorch,
+      :wepsword,
+      :wepbattleaxe,
+      :wephammer,
+      :wepmace,
+      :wepcrossbow,
+      :wepshield
+      ])
   end
 
   before_action :set_items
@@ -922,6 +937,22 @@ class ApplicationController < ActionController::Base
       "Elder's Shield",
       "Elder's Tome of Spells",
       "Elder's Torch"
+    ]
+
+    @onehanded = [
+      "Fire Staff",
+      "Frost Staff",
+      "Arcane Staff",
+      "Cursed Staff",
+      "Holy Staff",
+      "Bow",
+      "Spear",
+      "Nature Staff",
+      "Dagger",
+      "Broadsword",
+      "Battle Axe",
+      "Mace",
+      "Hammer"
     ]
   end
 end

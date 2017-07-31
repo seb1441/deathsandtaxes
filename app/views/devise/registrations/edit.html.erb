@@ -220,8 +220,8 @@
         <%= f.number_field :stonehammer, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
       <div class="col">
-        <%= f.label :scythe, "Sickle" %>
-        <%= f.number_field :scythe, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :sickle, "Sickle" %>
+        <%= f.number_field :sickle, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
         <%= f.label :skinningknife, "Skin Knife" %>
         <%= f.number_field :skinningknife, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
@@ -232,17 +232,62 @@
     </div><br>
     <div class="text-center"><strong>Weapon Crafting Tiers</strong></div><br>
     <div class="row">
-      <div class="col">
-        <%= f.label :weaponmagic, "Weapon Magic" %>
-        <%= f.number_field :weaponmagic, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
-        <%= f.label :weaponranged, "Weapon Ranged" %>
-        <%= f.number_field :weaponranged, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      <!-- <div class="col">
+        <%#= f.label :weaponmagic, "Weapon Magic" %>
+        <%#= f.number_field :weaponmagic, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%#= f.label :weaponranged, "Weapon Ranged" %>
+        <%#= f.number_field :weaponranged, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
       <div class="col">
-        <%= f.label :weaponmelee, "Weapon Melee" %>
-        <%= f.number_field :weaponmelee, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
-        <%= f.label :weaponoffhand, "Weapon Offhand" %>
-        <%= f.number_field :weaponoffhand, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%#= f.label :weaponmelee, "Weapon Melee" %>
+        <%#= f.number_field :weaponmelee, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%#= f.label :weaponoffhand, "Weapon Offhand" %>
+        <%#= f.number_field :weaponoffhand, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      </div> -->
+      <div class="col">
+        <strong>Mage</strong><br>
+        <%= f.label :wepfire, "Fire" %>
+        <%= f.number_field :wepfire, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepholy, "Holy" %>
+        <%= f.number_field :wepholy, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :weparcane, "Arcane" %>
+        <%= f.number_field :weparcane, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepfrost, "Frost" %>
+        <%= f.number_field :wepfrost, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepcursed, "Cursed" %>
+        <%= f.number_field :wepcursed, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :weptome, "Tome" %>
+        <%= f.number_field :weptome, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      </div>
+      <div class="col">
+        <strong>Hunter</strong><br>
+        <%= f.label :wepbow, "Bow" %>
+        <%= f.number_field :wepbow, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepspear, "Spear" %>
+        <%= f.number_field :wepspear, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepnaturestaff, "Nature Staff" %>
+        <%= f.number_field :wepnaturestaff, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepdagger, "Dagger" %>
+        <%= f.number_field :wepdagger, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepquarterstaff, "Quarterstaff" %>
+        <%= f.number_field :wepquarterstaff, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :weptorch, "Torch" %>
+        <%= f.number_field :weptorch, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+      </div>
+      <div class="col">
+        <strong>Warrior</strong><br>
+        <%= f.label :wepsword, "Sword" %>
+        <%= f.number_field :wepsword, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepbattleaxe, "Battleaxe" %>
+        <%= f.number_field :wepbattleaxe, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wephammer, "Hammer" %>
+        <%= f.number_field :wephammer, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepmace, "Mace" %>
+        <%= f.number_field :wepmace, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepcrossbow, "Crossbow" %>
+        <%= f.number_field :wepcrossbow, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
+        <%= f.label :wepshield, "Shield" %>
+        <%= f.number_field :wepshield, class: "form-control tieredit", placeholder: "Tier", required: true, max: 8, min: 1 %>
       </div>
     </div><br>
     <div class="text-center"><strong>Armor Crafting Tiers</strong></div><br>

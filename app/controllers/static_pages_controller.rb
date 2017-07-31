@@ -147,4 +147,73 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def mageweaponcrafting
+    if params[:q]
+      search_term = params[:q]
+      if search_term == "SortFireStaff"
+        @users = User.all.order('wepfire DESC')
+      elsif search_term == "SortHolyStaff"
+        @users = User.all.order('wepholy DESC')
+      elsif search_term == "SortArcaneStaff"
+        @users = User.all.order('weparcane DESC')
+      elsif search_term == "SortFrostStaff"
+        @users = User.all.order('wepfrost DESC')
+      elsif search_term == "SortCursedStaff"
+        @users = User.all.order('wepcursed DESC')
+      elsif search_term == "SortTome"
+        @users = User.all.order('weptome DESC')
+      else
+        @users = User.all.order('character_name ASC')
+      end
+    else
+      @users = User.all.order('character_name ASC')
+    end
+  end
+
+  def hunterweaponcrafting
+    if params[:q]
+      search_term = params[:q]
+      if search_term == "SortBow"
+        @users = User.all.order('wepbow DESC')
+      elsif search_term == "SortSpear"
+        @users = User.all.order('wepspear DESC')
+      elsif search_term == "SortNatureStaff"
+        @users = User.all.order('wepnaturestaff DESC')
+      elsif search_term == "SortDagger"
+        @users = User.all.order('wepdagger DESC')
+      elsif search_term == "SortQuarterstaff"
+        @users = User.all.order('wepquarterstaff DESC')
+      elsif search_term == "SortTorch"
+        @users = User.all.order('weptorch DESC')
+      else
+        @users = User.all.order('character_name ASC')
+      end
+    else
+      @users = User.all.order('character_name ASC')
+    end
+  end
+
+  def warriorweaponcrafting
+    if params[:q]
+      search_term = params[:q]
+      if search_term == "SortSword"
+        @users = User.all.order('wepbow DESC')
+      elsif search_term == "SortBattleaxe"
+        @users = User.all.order('wepbattleaxe DESC')
+      elsif search_term == "SortHammer"
+        @users = User.all.order('wephammer DESC')
+      elsif search_term == "SortMace"
+        @users = User.all.order('wepmace DESC')
+      elsif search_term == "SortCrossbow"
+        @users = User.all.order('wepcrossbow DESC')
+      elsif search_term == "SortShield"
+        @users = User.all.order('wepshield DESC')
+      else
+        @users = User.all.order('character_name ASC')
+      end
+    else
+      @users = User.all.order('character_name ASC')
+    end
+  end
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731041007) do
+ActiveRecord::Schema.define(version: 20170731222250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170731041007) do
     t.integer "ore", default: 1
     t.integer "woodaxe", default: 1
     t.integer "stonehammer", default: 1
-    t.integer "scythe", default: 1
+    t.integer "sickle", default: 1
     t.integer "skinningknife", default: 1
     t.integer "pickaxe", default: 1
     t.integer "clothhead", default: 1
@@ -67,10 +67,24 @@ ActiveRecord::Schema.define(version: 20170731041007) do
     t.integer "platehead", default: 1
     t.integer "platearmor", default: 1
     t.integer "plateshoes", default: 1
-    t.integer "weaponranged", default: 1
-    t.integer "weaponmagic", default: 1
-    t.integer "weaponmelee", default: 1
-    t.integer "weaponoffhand", default: 1
+    t.integer "wepfire", default: 1
+    t.integer "wepholy", default: 1
+    t.integer "weparcane", default: 1
+    t.integer "wepfrost", default: 1
+    t.integer "wepcursed", default: 1
+    t.integer "weptome", default: 1
+    t.integer "wepbow", default: 1
+    t.integer "wepspear", default: 1
+    t.integer "wepnaturestaff", default: 1
+    t.integer "wepdagger", default: 1
+    t.integer "wepquarterstaff", default: 1
+    t.integer "weptorch", default: 1
+    t.integer "wepsword", default: 1
+    t.integer "wepbattleaxe", default: 1
+    t.integer "wephammer", default: 1
+    t.integer "wepmace", default: 1
+    t.integer "wepcrossbow", default: 1
+    t.integer "wepshield", default: 1
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

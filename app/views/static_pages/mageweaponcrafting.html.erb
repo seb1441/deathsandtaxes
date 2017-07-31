@@ -1,0 +1,28 @@
+<%= content_for :page_title, "Mage Weapon Crafting" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= link_to 'Nom du personnage', "/skills/mage-weapon-crafting" %></th>
+      <th><%= link_to 'Fire Staff Tier', "/skills/mage-weapon-crafting?utf8=✓&q=SortFireStaff&commit=Search" %></th>
+      <th><%= link_to 'Holy Staff Tier', "/skills/mage-weapon-crafting?utf8=✓&q=SortHolyStaff&commit=Search" %></th>
+      <th><%= link_to 'Arcane Staff Tier', "/skills/mage-weapon-crafting?utf8=✓&q=SortArcaneStaff&commit=Search" %></th>
+      <th><%= link_to 'Frost Staff Tier', "/skills/mage-weapon-crafting?utf8=✓&q=SortFrostStaff&commit=Search" %></th>
+      <th><%= link_to 'Cursed Staff Tier', "/skills/mage-weapon-crafting?utf8=✓&q=SortCursedStaff&commit=Search" %></th>
+      <th><%= link_to 'Tome Tier', "/skills/mage-weapon-crafting?utf8=✓&q=SortTome&commit=Search" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><a href="/membres/<%= user.id %>-<%= user.character_name %>"><%= user.character_name %></a>  </td>
+        <td><%= user.wepfire %></td>
+        <td><%= user.wepholy %></td>
+        <td><%= user.weparcane %></td>
+        <td><%= user.wepfrost %></td>
+        <td><%= user.wepcursed %></td>
+        <td><%= user.weptome %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
