@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730050216) do
+ActiveRecord::Schema.define(version: 20170731041007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20170730050216) do
     t.string "character_name"
     t.string "rank", default: "Recruit"
     t.string "head", default: "Beginner's Mercenary Hood"
-    t.string "armor", default: "Beginner's Mercenary Hood"
-    t.string "shoes", default: "Beginner's Mercenary Hood"
-    t.string "mainhand", default: "Beginner's Mercenary Hood"
-    t.string "offhand", default: "Beginner's Mercenary Hood"
+    t.string "armor", default: "Beginner's Mercenary Jacket"
+    t.string "shoes", default: "Beginner's Mercenary Shoes"
+    t.string "mainhand", default: "Beginner's Broadsword"
+    t.string "offhand", default: "Beginner's Shield"
     t.boolean "admin", default: false
     t.integer "potion", default: 1
     t.integer "food", default: 1

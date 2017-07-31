@@ -4,13 +4,13 @@
   <div class="col-lg">
     <%= image_tag("heads/" + @user.head.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.head, class: "gearimage") %>
     <div class="geartext"><%= @user.head %></div><br><br><br>
-    <%= image_tag("heads/" + @user.armor.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.armor, class: "gearimage") %>
+    <%= image_tag("armors/" + @user.armor.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.armor, class: "gearimage") %>
     <div class="geartext"><%= @user.armor %></div><br><br><br>
-    <%= image_tag("heads/" + @user.shoes.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.shoes, class: "gearimage") %>
+    <%= image_tag("shoes/" + @user.shoes.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.shoes, class: "gearimage") %>
     <div class="geartext"><%= @user.shoes %></div><br><br><br>
-    <%= image_tag("heads/" + @user.mainhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.mainhand, class: "gearimage") %>
+    <%= image_tag("weapons/" + @user.mainhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.mainhand, class: "gearimage") %>
     <div class="geartext"><%= @user.mainhand %></div><br><br><br>
-    <%= image_tag("heads/" + @user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.offhand, class: "gearimage") %>
+    <%= image_tag("offhands/" + @user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.offhand, class: "gearimage") %>
     <div class="geartext"><%= @user.offhand %></div><br><br>
   </div>
   <div class="col-lg text-center">
