@@ -22,11 +22,11 @@
           <li class="nav-item <%= 'active' if yield(:page_title) == 'Membres' %>">
             <%= link_to "MEMBRES", members_path, class: "nav-link" %>
           </li>
-          <li id="skillsdropdown" class="nav-item dropdown">
+          <li id="skillsdropdown" class="nav-item dropdown <%= 'active' if yield(:page_title) == 'Farming' || yield(:page_title) == 'Gathering' %>">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SKILLS</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <%= link_to "Farming", farming_path, class: "dropdown-item" %>
-              <%= link_to "Gathering", farming_path, class: "dropdown-item" %>
+              <%= link_to "Gathering", gathering_path, class: "dropdown-item" %>
               <%= link_to "Weapon Crafting", farming_path, class: "dropdown-item" %>
               <%= link_to "Cloth Crafting", farming_path, class: "dropdown-item" %>
               <%= link_to "Leather Crafting", farming_path, class: "dropdown-item" %>

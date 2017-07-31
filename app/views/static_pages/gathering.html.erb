@@ -1,0 +1,26 @@
+<%= content_for :page_title, "Farming" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nom du personnage</th>
+      <th><a href="#">Potion Level</a></th>
+      <th>Food Level</th>
+      <th>Crop Level</th>
+      <th>Herb Level</th>
+      <th>Animal Level</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr><% uid = user.id %>
+        <td><a href="/users/<%= user.id %>"><%= user.character_name %></a>  </td>
+        <td><%= user.potion %></td>
+        <td><%= user.food %></td>
+        <td><%= user.crop %></td>
+        <td><%= user.herb %></td>
+        <td><%= user.animal %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

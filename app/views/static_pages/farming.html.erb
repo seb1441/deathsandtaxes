@@ -2,18 +2,18 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Nom du personnage</th>
-      <th><a href="#">Potion Level</a></th>
-      <th>Food Level</th>
-      <th>Crop Level</th>
-      <th>Herb Level</th>
-      <th>Animal Level</th>
+      <th><%= link_to 'Nom du personnage', "/skills/farming" %></th>
+      <th><%= link_to 'Potion Tier', "/skills/farming?utf8=✓&q=SortPotion&commit=Search" %></th>
+      <th><%= link_to 'Food Tier', "/skills/farming?utf8=✓&q=SortFood&commit=Search" %></th>
+      <th><%= link_to 'Crop Tier', "/skills/farming?utf8=✓&q=SortCrop&commit=Search" %></th>
+      <th><%= link_to 'Herb Tier', "/skills/farming?utf8=✓&q=SortHerb&commit=Search" %></th>
+      <th><%= link_to 'Animal Tier', "/skills/farming?utf8=✓&q=SortAnimal&commit=Search" %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
-      <tr><% uid = user.id %>
+      <tr>
         <td><a href="/users/<%= user.id %>"><%= user.character_name %></a>  </td>
         <td><%= user.potion %></td>
         <td><%= user.food %></td>
