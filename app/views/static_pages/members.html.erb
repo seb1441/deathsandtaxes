@@ -16,8 +16,7 @@ Nombre de membres total: <%= @users.length %>
         <td><%= user.rank %></td>
         <td>
           <% if user.last_active_at.present? %>
-            <% time1 = DateTime.strptime(user.last_active_at.to_s[0..-6] + "UTC", "%Y-%m-%d %H:%M:%S %Z") %>
-            <%= (time1 + (6.75/1440.0)).strftime('%Y/%m/%d, %l:%M %p') %>
+            <%= time1 = DateTime.strptime(user.last_active_at.to_s[0..-6] + "UTC", "%Y-%m-%d %H:%M:%S %Z").strftime('%Y/%m/%d, %l:%M %p') %>
           <% else %>
             Jamais
           <% end %>
