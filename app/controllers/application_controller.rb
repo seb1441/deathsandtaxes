@@ -57,7 +57,10 @@ class ApplicationController < ActionController::Base
       :wephammer,
       :wepmace,
       :wepcrossbow,
-      :wepshield
+      :wepshield,
+      :avitempower,
+      :reaver,
+      :adventurer
       ])
   end
 

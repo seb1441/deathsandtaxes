@@ -171,6 +171,15 @@
         <% end %>
       </ul>
     </div>
+    <br><br>
+    <%= f.label :avitempower, "<strong>Average Item Power</strong>".html_safe %>
+    <%= f.number_field :avitempower, class: "form-control", placeholder: "Level", required: true, max: 5000, min: 1 %>
+    <br>
+    <%= f.label :reaver, "<strong>Reaver Tier</strong>".html_safe %>
+    <%= f.number_field :reaver, class: "form-control", placeholder: "Tier", required: true, max: 8, min: 1 %>
+    <br>
+    <%= f.label :adventurer, "<strong>Adventurer Tier</strong>".html_safe %>
+    <%= f.number_field :adventurer, class: "form-control", placeholder: "Tier", required: true, max: 8, min: 1 %>
     <br><br><br>
     <div class="text-center"><strong>Entrer le tier (1-8) de chacun de vos skills ci-dessous.</strong></div><br>
     <div class="text-center"><strong>Farming Tiers</strong></div><br>
