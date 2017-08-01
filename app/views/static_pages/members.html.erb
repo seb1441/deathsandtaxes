@@ -3,9 +3,9 @@ Nombre de membres total: <%= @users.length %>
 <table class="table">
   <thead>
     <tr>
-      <th>Nom du personnage</th>
-      <th>Rang</th>
-      <th>Connecté la dernière fois</th>
+      <th><%= link_to 'Nom du personnage', "/membres" %></th>
+      <th><%= link_to 'Rang', "/membres?utf8=✓&q=SortRank&commit=Search" %></th>
+      <th><%= link_to 'Connecté la dernière fois', "/membres?utf8=✓&q=SortLogin&commit=Search" %></th>
     </tr>
   </thead>
 

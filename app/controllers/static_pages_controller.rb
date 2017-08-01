@@ -10,68 +10,64 @@ class StaticPagesController < ApplicationController
   end
 
   def members
+    if params[:q]
+      search_term = params[:q]
+      if search_term == "SortRank"
+        users1 = User.all
+        userslist = []
+        users1.each do |user|
+          if user.rank == "Guildmaster"
+            userslist.push(user)
+          end
+        end
+        users1.each do |user|
+          if user.rank == "The Right Hand"
+            userslist.push(user)
+          end
+        end
+        users1.each do |user|
+          if user.rank == "Master of Coin"
+            userslist.push(user)
+          end
+        end
+        users1.each do |user|
+          if user.rank == "Warmaster"
+            userslist.push(user)
+          end
+        end
+        users1.each do |user|
+          if user.rank == "Officer"
+            userslist.push(user)
+          end
+        end
+        users1.each do |user|
+          if user.rank == "Guardsman"
+            userslist.push(user)
+          end
+        end
+        users1.each do |user|
+          if user.rank == "Member"
+            userslist.push(user)
+          end
+        end
+        users1.each do |user|
+          if user.rank == "Recruit"
+            userslist.push(user)
+          end
+        end
+        @users = userslist
+      elsif search_term == "SortLogin"
+        @nonnull = User.where("last_sign_in_at is not null").order("last_sign_in_at DESC")
+        @null = User.where("last_sign_in_at is null")
+        @users = @nonnull+@null
+        # @users = User.all.order('last_sign_in_at DESC')
+      else
+        @users = User.all.order('character_name ASC')
+      end
+    else
+      @users = User.all.order('character_name ASC')
+    end
     # @users = User.all.order('character_name ASC')
-    # ranks = ["Guild Master", "The Right Hand", "Master of Coin", "Warmaster", "Officer", "Guardsman", "Member", "Recruit"]
-    # @users = User.all.sort_by(&rank)
-    users1 = User.all
-    userslist = []
-    users1.each do |user|
-      if user.rank == "Guild Master"
-        userslist.push(user)
-      end
-    end
-    users1.each do |user|
-      if user.rank == "The Right Hand"
-        userslist.push(user)
-      end
-    end
-    users1.each do |user|
-      if user.rank == "Master of Coin"
-        userslist.push(user)
-      end
-    end
-    users1.each do |user|
-      if user.rank == "Warmaster"
-        userslist.push(user)
-      end
-    end
-    users1.each do |user|
-      if user.rank == "Officer"
-        userslist.push(user)
-      end
-    end
-    users1.each do |user|
-      if user.rank == "Guardsman"
-        userslist.push(user)
-      end
-    end
-    users1.each do |user|
-      if user.rank == "Member"
-        userslist.push(user)
-      end
-    end
-    users1.each do |user|
-      if user.rank == "Recruit"
-        userslist.push(user)
-      end
-    end
-    @users = userslist
-    # User.each do |user|
-    #   if user.rank = ""
-    #     userslist.push(user)
-    # end
-    # User.each do |user|
-    #   if user.rank = "Guild Master"
-    #     userslist.push(user)
-    # end
-    # User.each do |user|
-    #   if user.rank = "Guild Master"
-    #     userslist.push(user)
-    # end
-    # User.each do |user|
-    #   if user.rank = "Guild Master"
-    #     userslist.push(user)
-    # end
     Time.zone = "Eastern Time (US & Canada)"
   end
 
