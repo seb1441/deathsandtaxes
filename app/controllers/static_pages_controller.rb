@@ -10,7 +10,9 @@ class StaticPagesController < ApplicationController
   end
 
   def members
-    @users = User.all.order('character_name ASC')
+    # @users = User.all.order('character_name ASC')
+    ranks = ["Guild Master", "The Right Hand", "Master of Coin", "Warmaster", "Officer", "Warmaster", "Guardsman", "Member"]
+    @users = User.all.sort_by &ranks.method(:index)
     Time.zone = "Eastern Time (US & Canada)"
   end
 
