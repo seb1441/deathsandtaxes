@@ -5,8 +5,15 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   # # skip_before_action :authenticate_user!, only: [:index]
   #
+  before_action :record_user_activity
 
   protected
+
+  def record_user_activity
+    if current_user
+      current_user.touch :last_active_at
+    end
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:character_name])

@@ -5,7 +5,7 @@ Nombre de membres total: <%= @users.length %>
     <tr>
       <th><%= link_to 'Nom du personnage', "/membres" %></th>
       <th><%= link_to 'Rang', "/membres?utf8=✓&q=SortRank&commit=Search" %></th>
-      <th><%= link_to 'Connecté la dernière fois', "/membres?utf8=✓&q=SortLogin&commit=Search" %></th>
+      <th><%= link_to 'Dernière activité', "/membres?utf8=✓&q=SortLogin&commit=Search" %></th>
     </tr>
   </thead>
 
@@ -15,8 +15,9 @@ Nombre de membres total: <%= @users.length %>
         <td><a href="/membres/<%= user.id %>-<%=user.character_name %>"><%= user.character_name %></a></td>
         <td><%= user.rank %></td>
         <td>
-          <% if user.last_sign_in_at.present? %>
-            <%= DateTime.strptime(user.last_sign_in_at.to_s[0..-6] + "UTC", "%Y-%m-%d %H:%M:%S %Z").strftime('%Y/%m/%d') %>
+          <% if user.last_active_at.present? %>
+            <% time1 = DateTime.strptime(user.last_active_at.to_s[0..-6] + "UTC", "%Y-%m-%d %H:%M:%S %Z") %>
+            <%= (time1 + (6.75/1440.0)).strftime('%Y/%m/%d, %l:%M %p') %>
           <% else %>
             Jamais
           <% end %>
