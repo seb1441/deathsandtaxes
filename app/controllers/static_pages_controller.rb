@@ -10,9 +10,68 @@ class StaticPagesController < ApplicationController
   end
 
   def members
-    users = User.all.order('character_name ASC')
-    # ranks = ["Guild Master", "The Right Hand", "Master of Coin", "Warmaster", "Officer", "Warmaster", "Guardsman", "Member"]
-    # @users = User.all.rank.sort_by &ranks.method(:index)
+    # @users = User.all.order('character_name ASC')
+    # ranks = ["Guild Master", "The Right Hand", "Master of Coin", "Warmaster", "Officer", "Guardsman", "Member", "Recruit"]
+    # @users = User.all.sort_by(&rank)
+    users1 = User.all
+    userslist = []
+    users1.each do |user|
+      if user.rank == "Guild Master"
+        userslist.push(user)
+      end
+    end
+    users1.each do |user|
+      if user.rank == "The Right Hand"
+        userslist.push(user)
+      end
+    end
+    users1.each do |user|
+      if user.rank == "Master of Coin"
+        userslist.push(user)
+      end
+    end
+    users1.each do |user|
+      if user.rank == "Warmaster"
+        userslist.push(user)
+      end
+    end
+    users1.each do |user|
+      if user.rank == "Officer"
+        userslist.push(user)
+      end
+    end
+    users1.each do |user|
+      if user.rank == "Guardsman"
+        userslist.push(user)
+      end
+    end
+    users1.each do |user|
+      if user.rank == "Member"
+        userslist.push(user)
+      end
+    end
+    users1.each do |user|
+      if user.rank == "Recruit"
+        userslist.push(user)
+      end
+    end
+    @users = userslist
+    # User.each do |user|
+    #   if user.rank = ""
+    #     userslist.push(user)
+    # end
+    # User.each do |user|
+    #   if user.rank = "Guild Master"
+    #     userslist.push(user)
+    # end
+    # User.each do |user|
+    #   if user.rank = "Guild Master"
+    #     userslist.push(user)
+    # end
+    # User.each do |user|
+    #   if user.rank = "Guild Master"
+    #     userslist.push(user)
+    # end
     Time.zone = "Eastern Time (US & Canada)"
   end
 
