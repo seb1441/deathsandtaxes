@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: "signup"}
   root 'static_pages#home'
   get '/membres', to: 'static_pages#members', as: 'members'
+  get 'evenements', to: 'static_pages#evenements', as: 'evenements'
   get '/skills/farming', to: 'static_pages#farming', as: 'farming'
   get '/skills/gathering', to: 'static_pages#gathering', as: 'gathering'
   get '/skills/mage-weapon-crafting', to: 'static_pages#mageweaponcrafting', as: 'mageweaponcrafting'
