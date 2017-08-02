@@ -142,6 +142,7 @@
     </div>
     <br><br>
     <div id="offhandslot" class="btn-group noselect">
+      <!-- disabled class -->
       <button type="button" class="btn btn-default dropdown-toggle test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <%= image_tag("offhands/" + current_user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", class: "test") %>
         <span id="selected"><%= current_user.offhand %></span>

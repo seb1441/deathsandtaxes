@@ -3,11 +3,21 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
+
+
   # # skip_before_action :authenticate_user!, only: [:index]
   #
   before_action :record_user_activity
 
   protected
+
+  def check_recruit
+    if current_user
+      if current_user.rank == "Recruit"
+        redirect_to root_path, :flash => {:alert => current_user.rank + "Vous devez être membre pour avoir accès au site!"}
+      end
+    end
+  end
 
   def record_user_activity
     if current_user

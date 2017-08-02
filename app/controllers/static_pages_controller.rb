@@ -4,7 +4,9 @@ class StaticPagesController < ApplicationController
   # def is_member?
   #   redirect_to new_user_session_path unless current_user.rank == "Member"
   # end
-
+  # skip_before_action :check_recruit, only: [:home, :members]
+  before_action :check_recruit, :except => [:home]
+  skip_before_action :authenticate_user!, only: [:home]
   def home
 
   end
