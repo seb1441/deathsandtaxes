@@ -13,8 +13,9 @@ class EventsController < ApplicationController
 
   def removename
     event = Event.find(params[:id])
-    if event.memberslist.include? "½½" + current_user.character_name + "¼¼"
-      event.update_attribute(:memberslist, event.memberslist.tr("½½" + current_user.character_name + "¼¼", ""))
+    name= "½½" + current_user.character_name + "¼¼"
+    if event.memberslist.include? name
+      event.update_attribute(:memberslist, event.memberslist.sub(name, ""))
     end
     redirect_to events_path
   end

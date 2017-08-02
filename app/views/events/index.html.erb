@@ -40,10 +40,10 @@
         <strong>Membres qui participent:</strong>
         <% if event.memberslist != "" %>
           <ul>
-            <% if event.memberslist.include? "½½¼¼" %>
-              <% membresparticipants = event.memberslist.split("½½")%>
+            <% if event.memberslist.include? "¼¼½½" %>
+              <% membresparticipants = event.memberslist.split("¼¼")%>
               <% membresparticipants.each do |membre| %>
-                <li><%= membre.delete '¼' %></li>
+                <li><%= membre.delete '½' %></li>
               <% end %>
             <% else %>
               <li><%= event.memberslist.delete '¼½' %></li>
@@ -57,3 +57,4 @@
     </div>
   </div>
 <% end %>
+<br>
