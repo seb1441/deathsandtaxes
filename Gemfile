@@ -66,5 +66,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
-
-gem 'rails_12factor', group: :production
+gem 'rails_admin', '~> 1.2'
+gem 'rails_admin-i18n'

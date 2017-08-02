@@ -64,4 +64,6 @@ Rails.application.configure do
     authentication:       'login',
     enable_starttls_auto: true
   }
+
+  config.i18n.default_locale = :fr
 end
