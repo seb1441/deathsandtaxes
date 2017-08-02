@@ -41,7 +41,12 @@ RailsAdmin.config do |config|
         :unlock_token,
         :locked_at,
         :admin,
-        :last_active_at
+        :last_active_at,
+        :armor,
+        :head,
+        :shoes,
+        :mainhand,
+        :offhand
     end
     show do
       # field :character_name
