@@ -26,12 +26,12 @@
       <% if event.memberslist.include? "½½" + current_user.character_name + "¼¼" %>
         <%= form_tag("/evenements/" + event.id.to_s + "/removename") do %>
           <%= hidden_field_tag :event_id, event.id %>
-          <%= submit_tag 'Se retirer', class: "btn btn-primary" %>
+          <%= submit_tag 'Se retirer', class: "btn btn-danger" %>
         <%- end -%>
       <% else %>
         <%= form_tag("/evenements/" + event.id.to_s + "/addname") do %>
           <%= hidden_field_tag :event_id, event.id %>
-          <%= submit_tag 'Participer', class: "btn btn-primary" %>
+          <%= submit_tag 'Participer', class: "btn btn-success" %>
         <%- end -%>
       <% end %>
       <%#= render 'form2', event: @event %>
