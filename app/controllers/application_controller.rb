@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def check_recruit
     if current_user
-      if current_user.rank == "Recruit"
+      if current_user.rank == "Recruit" || current_user.rank == "Not in guild"
         redirect_to root_path, :flash => {:alert => current_user.rank + "Vous devez être membre pour avoir accès au site!"}
       end
     end
