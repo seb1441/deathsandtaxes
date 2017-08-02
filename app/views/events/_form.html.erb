@@ -1,0 +1,11 @@
+<div class="form-signin">
+  <%= form_with(model: event, local: true) do |form| %>
+
+    <%= form.text_field :title, id: "eventTitle", placeholder: "Titre", required: true, class: "form-control" %><br>
+    <%= form.date_field :date, id: "eventDate", required: true, class: "form-control" %><br>
+    <%= form.text_area :description, size: "60x12", id: "eventDescription", required: true, class: "form-control", placeholder: "Description" %><br>
+
+    <%#= form.submit "Créer", class: "btn btn-primary" %>
+    <%= form.submit ( form.object.new_record? ? "Créer l'événement" : "Mettre à jour l'événement"), class: "btn btn-primary" %>
+  <% end %>
+</div>

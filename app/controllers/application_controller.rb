@@ -19,6 +19,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def check_authorized
+    if current_user
+      if current_user.admin == false
+        redirect_to root_path
+      end
+    end
+  end
+
   def record_user_activity
     if current_user
       current_user.touch :last_active_at

@@ -1,0 +1,57 @@
+<%= content_for :page_title, "Événements" %>
+<br>
+<% if current_user.admin == true %>
+  <%= link_to 'Créer un événement', new_event_path, class: "btn btn-primary" %><br>
+<% end %>
+<% @events.each do |event| %>
+  <br>
+  <div class="card">
+    <h3 class="card-header"><%= event.title %></h3>
+    <div class="card-block">
+      <% counter = (event.date - Date.today).to_i %>
+      <% if counter == 0 %>
+        <strong>Date: </strong> <%= event.date.strftime("%m/%d/%Y") %> (Aujourd'hui)<br><br>
+      <% elsif counter == 1 %>
+        <strong>Date: </strong> <%= event.date.strftime("%m/%d/%Y") %> (Demain)<br><br>
+      <% elsif counter == -1 %>
+        <strong>Date: </strong> <%= event.date.strftime("%m/%d/%Y") %> (Était hier)<br><br>
+      <% elsif counter < -1 %>
+        <strong>Date: </strong> <%= event.date.strftime("%m/%d/%Y") %> (Était il y a <%= counter %> jours)<br><br>
+      <% else %>
+        <strong>Date: </strong> <%= event.date.strftime("%m/%d/%Y") %> (Dans <%= counter %> jours)<br><br>
+      <% end %>
+      <p class="card-text">
+        <%= event.description %>
+      </p>
+      <% if event.memberslist.include? "½½" + current_user.character_name + "¼¼" %>
+        <%= form_tag("/evenements/" + event.id.to_s + "/removename") do %>
+          <%= hidden_field_tag :event_id, event.id %>
+          <%= submit_tag 'Se retirer', class: "btn btn-primary" %>
+        <%- end -%>
+      <% else %>
+        <%= form_tag("/evenements/" + event.id.to_s + "/addname") do %>
+          <%= hidden_field_tag :event_id, event.id %>
+          <%= submit_tag 'Participer', class: "btn btn-primary" %>
+        <%- end -%>
+      <% end %>
+      <%#= render 'form2', event: @event %>
+      <br><br>
+      <div class="card-footer text-muted">
+        <strong>Membres qui participent:</strong>
+        <% if event.memberslist != "" %>
+          <ul>
+            <% if event.memberslist.include? "½½¼¼" %>
+              <% membresparticipants = event.memberslist.split("½½")%>
+              <% membresparticipants.each do |membre| %>
+                <li><%= membre.delete '¼' %></li>
+              <% end %>
+            <% else %>
+              <li><%= event.memberslist.delete '¼½' %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div><br>
+      <%= link_to 'Modifier', edit_event_path(event), class: "btn btn-primary" %> <%= link_to 'Supprimer', event, method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer l'événement?" }, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
