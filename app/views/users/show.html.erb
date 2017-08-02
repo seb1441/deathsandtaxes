@@ -11,8 +11,11 @@
     <div class="geartext"><%= @user.shoes %></div><br><br><br>
     <%= image_tag("weapons/" + @user.mainhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.mainhand, class: "gearimage") %>
     <div class="geartext"><%= @user.mainhand %></div><br><br><br>
-    <%= image_tag("offhands/" + @user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.offhand, class: "gearimage") %>
-    <div class="geartext"><%= @user.offhand %></div><br><br>
+    <% if @onehanded.include? current_user.mainhand %>
+      <%= image_tag("offhands/" + @user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.offhand, class: "gearimage") %>
+      <div class="geartext"><%= @user.offhand %></div><br><br>
+    <% end %>
+
     <br><strong>Average Item Power: </strong><%= @user.avitempower %>
     <br><strong>Reaver Tier: </strong><%= @user.reaver %>
     <br><strong>Adventurer Tier: </strong><%= @user.adventurer %>

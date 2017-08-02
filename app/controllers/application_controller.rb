@@ -965,7 +965,6 @@ class ApplicationController < ActionController::Base
       "Arcane Staff",
       "Cursed Staff",
       "Holy Staff",
-      "Bow",
       "Spear",
       "Nature Staff",
       "Dagger",
