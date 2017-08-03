@@ -1,23 +1,84 @@
-<!-- <%= content_for :page_title, "Orders" %>
+<%= content_for :page_title, "Orders" %>
 <table class="table">
   <thead>
     <tr>
       <th>Work Order</th>
       <th>From</th>
-      <th>To</th>
-      <th>Description</th>
+      <th>Quantity</th>
+      <th>Item</th>
+      <th>Note</th>
       <th>Status</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
       <tr>
         <td>#1</td>
-        <td>Neoh</td>
-        <td>CookieDown</td>
-        <td></td>
+        <td>Binashole</td>
+        <td>600</td>
+        <td>Plank T4</td>
+        <td>DDDDDDDDDDDDDDDDDDDDDDDd</td>
+        <td class="ddd"><strong>Pending</strong></td>
+        <td><%#= form_tag("/evenements/addname") do %>
+          <%#= hidden_field_tag :event_id, "" %>
+          <%#= submit_tag 'Complete', class: "btn btn-success" %>
+        <%#- end -%>
+        <%#= form_tag("/=/addname") do %>
+          <%#= hidden_field_tag :event_id, "" %>
+          <%#= submit_tag 'Edit', class: "btn btn-secondary" %>
+        <%#- end -%>
+        <%#= form_tag("/=/addname") do %>
+          <%#= hidden_field_tag :event_id, "" %>
+          <%#= submit_tag 'Delete', class: "btn btn-danger" %>
+        <%#- end -%>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Change Status
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="#">Dropdown link</a>
+              <a class="dropdown-item" href="#">Dropdown link</a>
+            </div>
+          </div>
+        </td>
       </tr>
-    <% end %>
+      <tr>
+        <td>#2</td>
+        <td>Binashole</td>
+        <td>200</td>
+        <td>Thick Leather T3</td>
+        <td></td>
+        <td class="ddd"><strong>Pending</strong></td>
+        <td>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Change Status
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="#">Dropdown link</a>
+              <a class="dropdown-item" href="#">Dropdown link</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>#3</td>
+        <td>Binashole</td>
+        <td>200</td>
+        <td>Thick Leather T4</td>
+        <td></td>
+        <td class="ddd"><strong>Pending</strong></td>
+        <td>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Change Status
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="#">Dropdown link</a>
+              <a class="dropdown-item" href="#">Dropdown link</a>
+            </div>
+          </div>
+        </td>
+      </tr>
   </tbody>
-</table> -->
+</table>

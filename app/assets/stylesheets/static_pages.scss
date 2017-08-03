@@ -1,5 +1,5 @@
 body {
-  background-image: url(image-path('wallpaper_albion.jpg'));
+  background-image: url("image-path('wallpaper_albion.jpg')");
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100%;
@@ -7,18 +7,36 @@ body {
   background-size: cover;
 }
 
+.ddd {
+  color: orange;
+}
+
 .container {
   background-color: #edf0f5;
   border-radius: 20px;
   border: 2px solid black;
 }
-.dropdown-toggle, .dropdown-menu {
+
+.dropdown-menu,
+.dropdown-toggle {
   width: 300px;
 }
-.btn-group img { max-height: 70px;}
-.dropdown-toggle { }
-.dropdown-menu>li>a:hover { background: #f1f9fd } /* $search-blue */
-.dropdown-header { background: #ccc; font-size: 14px; font-weight: 700}
+
+.btn-group img {
+  max-height: 70px;
+}
+
+.dropdown-toggle {}
+
+.dropdown-menu > li > a:hover {
+  background: #f1f9fd;
+}
+/* $search-blue */
+.dropdown-header {
+  background: #ccc;
+  font-size: 14px;
+  font-weight: 700;
+}
 
 .gear {
   padding: 0;
@@ -30,11 +48,11 @@ body {
 }
 
 .btn-group button {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .test {
-  float:left;
+  float: left;
 }
 
 .item:hover {
@@ -46,14 +64,19 @@ body {
   font-size: 5px;
 }
 
-
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
 
@@ -74,7 +97,7 @@ body {
   width: 78px;
 }
 
-#skillsdropdown .dropdown-menu a{
+#skillsdropdown .dropdown-menu a {
   width: 210px;
 }
 
@@ -88,7 +111,7 @@ body {
 .gearimage {
   max-width: 100px;
   max-height: 100px;
-  float:left;
+  float: left;
 }
 
 .geartext {
@@ -96,8 +119,7 @@ body {
 }
 
 .col label {
-  margin: 0;
-  margin-top: 5px;
+  margin: 5px 0 0;
 }
 
 #logoprincipal {
@@ -105,7 +127,6 @@ body {
   margin: 0 auto;
 }
 
-.tieredit
-{
+.tieredit {
   width: 50px;
 }
