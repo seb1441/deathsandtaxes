@@ -973,6 +973,7 @@ class ApplicationController < ActionController::Base
       "Arcane Staff",
       "Cursed Staff",
       "Holy Staff",
+      "Druidic Staff",
       "Spear",
       "Nature Staff",
       "Dagger",

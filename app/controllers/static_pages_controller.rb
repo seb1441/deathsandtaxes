@@ -7,6 +7,11 @@ class StaticPagesController < ApplicationController
   # skip_before_action :check_recruit, only: [:home, :members]
   before_action :check_recruit, :except => [:home]
   skip_before_action :authenticate_user!, only: [:home]
+
+  def orders
+    
+  end
+
   def home
 
   end
@@ -59,7 +64,7 @@ class StaticPagesController < ApplicationController
         end
         @users = userslist
       elsif search_term == "SortLogin"
-        @nonnull = User.where("last_active_at is not null").order("last_sign_in_at DESC")
+        @nonnull = User.where("last_active_at is not null").order("last_sign_in_at ASC")
         @null = User.where("last_active_at is null")
         @users = @nonnull+@null
         # @users = User.all.order('last_sign_in_at DESC')
