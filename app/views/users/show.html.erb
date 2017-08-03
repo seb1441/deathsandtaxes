@@ -11,7 +11,7 @@
     <div class="geartext"><%= @user.shoes %></div><br><br><br>
     <%= image_tag("weapons/" + @user.mainhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.mainhand, class: "gearimage") %>
     <div class="geartext"><%= @user.mainhand %></div><br><br><br>
-    <% if @onehanded.include? current_user.mainhand %>
+    <% if @onehanded.include? current_user.mainhand.split(' ')[1..-1].join(' ') %>
       <%= image_tag("offhands/" + @user.offhand.gsub(/[^a-zA-Z. ]/, '').downcase.tr(" ", "_") + ".png", title: @user.offhand, class: "gearimage") %>
       <div class="geartext"><%= @user.offhand %></div><br><br>
     <% end %>
