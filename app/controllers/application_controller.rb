@@ -969,18 +969,29 @@ class ApplicationController < ActionController::Base
 
     @onehanded = [
       "Fire Staff",
+      "Wildfire Staff",
       "Frost Staff",
+      "Hoarfrost Staff",
       "Arcane Staff",
+      "Witchwork Staff",
       "Cursed Staff",
+      "Lifecurse Staff",
       "Holy Staff",
-      "Druidic Staff",
+      "Lifetouch Staff",
       "Spear",
+      "Heron Spear",
       "Nature Staff",
+      "Druidic Staff",
       "Dagger",
+      "Bloodletter",
       "Broadsword",
-      "Battle Axe",
+      "Clarent Blade",
+      "Battleaxe",
       "Mace",
-      "Hammer"
+      "Incubus Mace",
+      "Bedrock Mace",
+      "Hammer",
+      "Light Crossbow"
     ]
   end
 end
