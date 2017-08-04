@@ -1,5 +1,5 @@
 <%= content_for :page_title, "Événements" %>
-<br><h1><%= t('welcome') %></h1>
+<br>
 <% if current_user.admin == true %>
   <%= link_to 'Créer un événement', new_event_path, class: "btn btn-primary" %><br>
 <% end %>
