@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :orders
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :events, path: "evenements", :except => [:show] do
     member do
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   # devise_for :users
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: "signup"}
   root 'static_pages#home'
-  get '/orders/', to: 'static_pages#orders', as: 'orders'
+  # get '/orders/', to: 'static_pages#orders', as: 'orders'
   get '/membres', to: 'static_pages#members', as: 'members'
   # get 'evenements', to: 'static_pages#evenements', as: 'evenements'
   get '/skills/farming', to: 'static_pages#farming', as: 'farming'

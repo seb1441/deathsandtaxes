@@ -1,5 +1,5 @@
 <%= content_for :page_title, "Événements" %>
-<br>
+<br><h1><%= t('welcome') %></h1>
 <% if current_user.admin == true %>
   <%= link_to 'Créer un événement', new_event_path, class: "btn btn-primary" %><br>
 <% end %>
@@ -24,15 +24,9 @@
         <%= event.description %>
       </p>
       <% if event.memberslist.include? "½½" + current_user.character_name + "¼¼" %>
-        <%= form_tag("/evenements/" + event.id.to_s + "/removename") do %>
-          <%= hidden_field_tag :event_id, event.id %>
-          <%= submit_tag 'Se retirer', class: "btn btn-danger" %>
-        <%- end -%>
+        <%= link_to "Se retirer", removename_event_path(event.id), method: :post, class: "btn btn-danger" %>
       <% else %>
-        <%= form_tag("/evenements/" + event.id.to_s + "/addname") do %>
-          <%= hidden_field_tag :event_id, event.id %>
-          <%= submit_tag 'Participer', class: "btn btn-success" %>
-        <%- end -%>
+        <%= link_to "Participer", addname_event_path(event.id), method: :post, class: "btn btn-success" %>
       <% end %>
       <%#= render 'form2', event: @event %>
       <br><br>
