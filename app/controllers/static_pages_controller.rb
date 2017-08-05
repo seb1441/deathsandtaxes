@@ -64,7 +64,7 @@ class StaticPagesController < ApplicationController
         end
         @users = userslist
       elsif search_term == "SortLogin"
-        @nonnull = User.where("last_active_at is not null").order("last_active_at ASC")
+        @nonnull = User.where("last_active_at is not null").order("last_active_at DESC")
         @null = User.where("last_active_at is null")
         @users = @nonnull+@null
         # @users = User.all.order('last_sign_in_at DESC')
