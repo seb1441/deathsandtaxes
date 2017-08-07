@@ -8,6 +8,9 @@ class StaticPagesController < ApplicationController
   before_action :check_recruit, :except => [:home]
   skip_before_action :authenticate_user!, only: [:home]
 
+  def testpage
+  end
+
   def orders
 
   end
@@ -62,8 +65,14 @@ class StaticPagesController < ApplicationController
             userslist.push(user)
           end
         end
+        users1.each do |user|
+          if user.rank == "Not in guild"
+            userslist.push(user)
+          end
+        end
         @users = userslist
       elsif search_term == "SortLogin"
+        puts "TEST"
         @nonnull = User.where("last_active_at is not null").order("last_active_at DESC")
         @null = User.where("last_active_at is null")
         @users = @nonnull+@null

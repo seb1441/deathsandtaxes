@@ -25,6 +25,20 @@ RailsAdmin.config do |config|
       field :email
     end
     edit do
+      # field :rank, :enum do
+      #   enum do [
+      #       'Guildmaster',
+      #       'The Right Hand',
+      #       'Master of Coin',
+      #       'Warmaster',
+      #       'Officer',
+      #       'Guardsman',
+      #       'Member',
+      #       'Recruit',
+      #       'Not in guild',
+      #     ]
+      #   end
+      # end
       exclude_fields :password_confirmation,
         :reset_password_sent_at,
         :remember_created_at,
