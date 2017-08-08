@@ -26,7 +26,6 @@
 // })
 
 $(document).on('turbolinks:load', function() {
-  $('#cliptest').html(window.clipboardData.getData('Text'));
   $('#headslot .item').click(function() {
     $('#headslot #selected').text($(this).text());
     $('#headGear').val($.trim($(this).text()));
