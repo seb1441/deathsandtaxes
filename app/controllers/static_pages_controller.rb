@@ -26,7 +26,7 @@ class StaticPagesController < ApplicationController
         users1 = User.all
         userslist = []
         users1.each do |user|
-          if user.rank == "Guildmaster"
+          if user.rank == "Guild Master"
             userslist.push(user)
           end
         end
