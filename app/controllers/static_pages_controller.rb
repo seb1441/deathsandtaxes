@@ -8,9 +8,6 @@ class StaticPagesController < ApplicationController
   before_action :check_recruit, :except => [:home]
   skip_before_action :authenticate_user!, only: [:home]
 
-  def testpage
-  end
-
   def orders
 
   end

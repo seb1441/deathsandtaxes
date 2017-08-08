@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get '/test', to: 'static_pages#testpage'
   resources :orders
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :events, path: "evenements", :except => [:show] do
