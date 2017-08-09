@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804221348) do
+ActiveRecord::Schema.define(version: 20170809020349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20170804221348) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "memberslist", default: ""
+  end
+
+  create_table "gears", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "head", default: "Beginner's Mercenary Hood"
+    t.string "armor", default: "Beginner's Mercenary Jacket"
+    t.string "shoes", default: "Beginner's Mercenary Shoes"
+    t.string "mainhand", default: "Beginner's Broadsword"
+    t.string "offhand", default: "Beginner's Shield"
   end
 
   create_table "orders", force: :cascade do |t|
