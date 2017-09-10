@@ -1,24 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a website that I've made for my guild in Albion Online.
+On registrations, members set their gear they're wearing, stats, crafting skills etc.
+Using this, it became easy to manage hundreds of members. We can easily find who can craft the armor we need or who can join us for an event/dungeon etc.
